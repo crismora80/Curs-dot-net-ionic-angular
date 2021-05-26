@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title class="ion-text-center">My app</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="form-wrapper">
+        <form class="form" (submit)="logForm()">
+            <ion-item>
+                <ion-label>Username</ion-label>
+                <ion-input type="text" [(ngModel)]="login.Email" name="eMail"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Password</ion-label>
+                <ion-input type="password" [(ngModel)]="login.Password" name="password"></ion-input>
+            </ion-item>
+            <ion-button type="submit">Log in</ion-button>
+        </form>
+    </div>
+</ion-content>

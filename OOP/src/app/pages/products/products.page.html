@@ -1,0 +1,28 @@
+<oop-navbar [pageTitle]="'Products'"></oop-navbar>
+<ion-content>
+    <ng-container *ngIf="products">
+        <ion-list *ngIf="products.length > 0; else noProducts">
+            <ion-item *ngFor="let product of products; let i = index">
+
+                <ion-label>
+                    <ng-container *ngIf="!duringOrder">{{i + 1}}</ng-container>
+                    <ion-checkbox *ngIf="duringOrder" [(ngModel)]="product.checked"></ion-checkbox>
+                </ion-label>
+
+                <ion-label>{{product.name}}</ion-label>
+                <ng-container *ngIf="!duringOrder">
+                    <ion-icon name="pencil-outline" class="icon" (click)="goToEdit(product)"></ion-icon>
+                    <ion-icon name="trash-outline" class="icon" (click)="deleteProduct(product)"></ion-icon>
+                    <ion-icon name="caret-forward-outline" class="icon" (click)="goToDetails(product)"></ion-icon>
+                </ng-container>
+            </ion-item>
+        </ion-list>
+        <ng-template #noProducts>No products available</ng-template>
+    </ng-container>
+</ion-content>
+<ion-footer>
+    <ion-button *ngIf="duringOrder" expand="block" (click)="confirmOrder()">Confirm order</ion-button>
+    <ion-button expand="block" [color]="duringOrder ? 'light' : 'primary'" (click)="startOrdering()">
+        {{orderButtonName}}</ion-button>
+    <ion-button expand="block" color="secondary" [routerLink]="['add']">Add product</ion-button>
+</ion-footer>

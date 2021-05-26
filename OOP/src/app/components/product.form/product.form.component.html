@@ -1,0 +1,29 @@
+<div class="form-wrapper">
+    <form class="form" (submit)="submitProduct()">
+        <ion-item>
+            <ion-label>Name</ion-label>
+            <ion-input type="text" [(ngModel)]="product.name" name="name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Description</ion-label>
+            <ion-input type="text" [(ngModel)]="product.description" name="description"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Product Type</ion-label>
+            <ion-select
+                [(ngModel)]="product.productType"
+                name="productType"
+                interface="popover">
+                <ion-select-option *ngFor="let option of PRODUCT_TYPES"
+                    [value]="option">
+                    {{ option }}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Price</ion-label>
+            <ion-input type="text" [(ngModel)]="product.price" name="price"></ion-input>
+        </ion-item>
+        <ion-button expand="block" type="submit">{{actionName}}</ion-button>
+    </form>
+</div>

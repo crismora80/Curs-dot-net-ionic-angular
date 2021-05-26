@@ -1,0 +1,19 @@
+oop-login-page {
+  ion-header {
+    ion-toolbar {
+      .toolbar-background {
+        background-color: lightgreen;
+        color: white;
+      }
+    }
+  }
+
+  ion-content {
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}

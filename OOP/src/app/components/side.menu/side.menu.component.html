@@ -1,0 +1,23 @@
+<ion-menu side="start" menuId="first" content-id="main">
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-menu-toggle auto-hide="true">
+                <ion-item [routerLink]="['products']">My Products</ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle auto-hide="true">
+                <ion-item [routerLink]="['orders']">My orders</ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle auto-hide="true">
+                <ion-item>View report</ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle auto-hide="true">
+                <ion-item (click)="logOut()">Log out</ion-item>
+            </ion-menu-toggle>
+        </ion-list>
+    </ion-content>
+</ion-menu>

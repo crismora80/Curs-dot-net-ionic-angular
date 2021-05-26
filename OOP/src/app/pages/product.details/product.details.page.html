@@ -1,0 +1,22 @@
+<oop-navbar [pageTitle]="'Product details'"></oop-navbar>
+<ion-content>
+    <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-text>{{product.name}}</ion-text>
+    </ion-item>
+    <ion-item>
+        <ion-label>Description</ion-label>
+        <ion-text>{{product.description}}</ion-text>
+    </ion-item>
+    <ion-item>
+        <ion-label>Product type</ion-label>
+        <ion-text>{{product.productType}}</ion-text>
+    </ion-item>
+    <ion-item>
+        <ion-label>Price</ion-label>
+        <ion-text>{{product.price}}</ion-text>
+    </ion-item>
+</ion-content>
+<ion-footer>
+    <ion-button expand="block" color="secondary" [routerLink]="['/products']">Back to products</ion-button>
+</ion-footer>

@@ -1,0 +1,10 @@
+<oop-navbar [pageTitle]="'Edit product'"></oop-navbar>
+
+<ion-content>
+    <oop-product-form [product]="product" [actionName]="'Edit Product'" (confirm)="editProduct($event)">
+    </oop-product-form>
+</ion-content>
+
+<ion-footer>
+    <ion-button expand="block" color="secondary" [routerLink]="['/products']">Back to products</ion-button>
+</ion-footer>
